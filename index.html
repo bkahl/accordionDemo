@@ -1,0 +1,112 @@
+<!doctype html>
+ 
+<html lang="en">
+	<head>
+	  <meta charset="utf-8" />
+	  <title>jQuery UI Accordion - Default functionality</title>
+	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+	  <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	  <script src="js/jquery-ui.js"></script>
+	  <script>
+	  $(function() {
+	    $( "#accordion-data" ).accordion();
+	  });
+	  </script>
+	  <style>
+	    #accordion-data div{
+			display: none;
+		}
+		.container{
+			padding: 10px;
+			width: 580px;
+		}
+		#accordion-nav{
+			width: 20%;
+			float: left;
+		}
+		#accordion-data{
+			width: 80%;
+			float: left;
+		}
+	  </style>
+
+	</head>
+	<body>
+	
+		<div class="container">
+	
+			<div id="accordion-nav">
+				<div id="link_1"><a href="#">link 1</a></div>
+				<div id="link_2"><a href="#">link 2</a></div>
+				<div id="link_3"><a href="#">link 3</a></div>
+			</div>
+
+			<div id="accordion-data" style="display:none;">
+				<div data-id="link_1" style="display:none;">
+					<h3>Section 1</h3>
+					<div>
+					  <ul>
+					    <li>List item one</li>
+					    <li>List item two</li>
+					    <li>List item three</li>
+					  </ul>
+					</div>
+					<h3>Section 2</h3>
+					<div>
+					  <ul>
+					    <li>List item one</li>
+					    <li>List item two</li>
+					    <li>List item three</li>
+					  </ul>
+					</div>
+					<h3>Section 3</h3>
+					<div>
+					  <ul>
+					    <li>List item one</li>
+					    <li>List item two</li>
+					    <li>List item three</li>
+					  </ul>
+					</div>
+					<h3>Section 4</h3>
+					<div>
+					<ul>
+					    <li>List item one</li>
+					    <li>List item two</li>
+					    <li>List item three</li>
+					  </ul>
+					</div>
+				</div>
+				<div data-id="link_2" style="display:none;">
+					<h3>Section 1</h3>
+					<div>
+					  <ul>
+					    <li>List item one</li>
+					    <li>List item two</li>
+					    <li>List item three</li>
+					  </ul>
+					</div>
+					<h3>Section 2</h3>
+					<div>
+					  <ul>
+					    <li>List item one</li>
+					    <li>List item two</li>
+					    <li>List item three</li>
+					  </ul>
+					</div>
+				</div>
+				<div data-id="link_3">
+					<h3>Section 1</h3>
+					<div>
+					  <ul>
+					    <li>List item one</li>
+					    <li>List item two</li>
+					    <li>List item three</li>
+					  </ul>
+					</div>
+				</div>
+			</div>
+ 
+		</div>
+	
+	</body>
+</html>
