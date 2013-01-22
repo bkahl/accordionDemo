@@ -4,81 +4,129 @@
 	<head>
 	  <meta charset="utf-8" />
 	  <title>jQuery UI Accordion - Default functionality</title>
-	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+	  <!-- <link rel="stylesheet" href="css/jquery-accordion.css" /> -->
+	<!-- <link rel="stylesheet" href="css/ww-jquery-ui.css" /> -->
+	<link rel="stylesheet" href="css/style.css" />
 	  <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-	  <script src="js/jquery-ui.js"></script>
-	  <script>
-	  $(function() {
-	    $( "#accordion-data" ).accordion();
-	  });
-	  </script>
+	  <script src="js/ww-jquery-ui.js"></script>
+
 	  <style>
-	    #accordion-data div{
-			display: none;
-		}
 		.container{
+			display: inline-block;
 			padding: 10px;
 			width: 580px;
+			border: solid 1px #ccc;
 		}
 		#accordion-nav{
-			width: 20%;
+			width: 18%;
 			float: left;
+			background: #efefef;
+			margin-right: 10px;
+		}
+		#accordion-nav > div{
+			padding: 10px;
+		}
+		#accordion-nav > div a{
+			text-decoration: none;
+		}
+		#accordion-nav > div a:hover{
+			text-decoration: underline;
 		}
 		#accordion-data{
 			width: 80%;
 			float: left;
 		}
+		#accordion-data > div > div {
+			height: 75px;
+		}
+		
+		
+		.ui-widget {
+		font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
+		font-size: 1.1em/*{fsDefault}*/;
+		}
+		.ui-helper-reset {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		outline: 0;
+		line-height: 1.3;
+		text-decoration: none;
+		font-size: 100%;
+		list-style: none;
+		}
+		.ui-accordion .ui-accordion-header {
+		display: block;
+		cursor: pointer;
+		position: relative;
+		margin-top: 2px;
+		padding: .5em .5em .5em .7em;
+		min-height: 0;
+		}
+		
+		.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+		border-top-right-radius: 4px/*{cornerRadius}*/;
+		}
+		.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+		border-top-left-radius: 4px/*{cornerRadius}*/;
+		}
+		.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+		border-bottom-right-radius: 4px/*{cornerRadius}*/;
+		}
+		.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-br {
+		border-bottom-left-radius: 4px/*{cornerRadius}*/;
+		}
+		
+		.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+		border: 1px solid #aaaaaa/*{borderColorActive}*/;
+		background: #ffffff/*{bgColorActive}*/ url(images/ui-bg_glass_65_ffffff_1x400.png)/*{bgImgUrlActive}*/ 50%/*{bgActiveXPos}*/ 50%/*{bgActiveYPos}*/ repeat-x/*{bgActiveRepeat}*/;
+		font-weight: normal/*{fwDefault}*/;
+		color: #212121/*{fcActive}*/;
+		}
+		.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+		border: 1px solid #d3d3d3/*{borderColorDefault}*/;
+		background: #e6e6e6/*{bgColorDefault}*/ url(images/ui-bg_glass_75_e6e6e6_1x400.png)/*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/;
+		font-weight: normal/*{fwDefault}*/;
+		color: #555555/*{fcDefault}*/;
+		}
+		
+		.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+		position: absolute;
+		left: .5em;
+		top: 50%;
+		margin-top: -8px;
+		}
+		.ui-accordion .ui-accordion-content {
+		padding: 1em 2.2em;
+		border-top: 0;
+		overflow: auto;
+		}
+		.ui-widget-content {
+		border: 1px solid #aaaaaa/*{borderColorContent}*/;
+		background: #ffffff/*{bgColorContent}*/ url(images/ui-bg_flat_75_ffffff_40x100.png)/*{bgImgUrlContent}*/ 50%/*{bgContentXPos}*/ 50%/*{bgContentYPos}*/ repeat-x/*{bgContentRepeat}*/;
+		color: #222222/*{fcContent}*/;
+		}
 	  </style>
 
 	</head>
 	<body>
-	
-		<div class="container">
+		<div id="nav">
+			<span><a data-id="container" href="#">Details</a></span>
+		</div>
+		
+		<div id="container" style="display:none; width:580px;">
 	
 			<div id="accordion-nav">
-				<div id="link_1"><a data-id="link_1" href="#">link 1</a></div>
-				<div id="link_2"><a data-id="link_2" href="#">link 2</a></div>
-				<div id="link_3"><a data-id="link_3" href="#">link 3</a></div>
+				<div id="nav-link_1"><a data-id="accordion-1" href="#">link 1</a></div>
+				<div id="nav-link_2"><a data-id="accordion-2" href="#">link 2</a></div>
+				<div id="nav-link_3"><a data-id="accordion-3" href="#">link 3</a></div>
 			</div>
 
-			<div id="accordion-data" style="display:none;">
-				<div data-id="link_1" style="display:none;">
-					<h3>Section 1</h3>
-					<div>
-					  <ul>
-					    <li>List item one</li>
-					    <li>List item two</li>
-					    <li>List item three</li>
-					  </ul>
-					</div>
-					<h3>Section 2</h3>
-					<div>
-					  <ul>
-					    <li>List item one</li>
-					    <li>List item two</li>
-					    <li>List item three</li>
-					  </ul>
-					</div>
-					<h3>Section 3</h3>
-					<div>
-					  <ul>
-					    <li>List item one</li>
-					    <li>List item two</li>
-					    <li>List item three</li>
-					  </ul>
-					</div>
-					<h3>Section 4</h3>
-					<div>
-					<ul>
-					    <li>List item one</li>
-					    <li>List item two</li>
-					    <li>List item three</li>
-					  </ul>
-					</div>
-				</div>
-				<div data-id="link_2" style="display:none;">
-					<h3>Section 1</h3>
-					<div>
+			<div id="accordion-data" style="display:block;">
+				
+				<div id="accordion-1" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+					<h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-header-active ui-state-active ui-corner-top">Section 1</h3>
+					<div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
 					  <ul>
 					    <li>List item one</li>
 					    <li>List item two</li>
@@ -94,8 +142,9 @@
 					  </ul>
 					</div>
 				</div>
-				<div data-id="link_3">
-					<h3>Section 1</h3>
+				
+				<div id="accordion-2" style="">
+					<h3>Test Me</h3>
 					<div>
 					  <ul>
 					    <li>List item one</li>
@@ -104,9 +153,60 @@
 					  </ul>
 					</div>
 				</div>
-			</div>
+				
+				<div id="accordion-3" style="">
+					<h3>Test Me</h3>
+					<div>
+					  <ul>
+					    <li>List item one</li>
+					    <li>List item two</li>
+					    <li>List item three</li>
+					  </ul>
+					</div>
+					<h3>Section 2</h3>
+					<div>
+					  <ul>
+					    <li>List item one</li>
+					    <li>List item two</li>
+					    <li>List item three</li>
+					  </ul>
+					</div>
+					<h3>Eat Me</h3>
+					<div>
+					  <ul>
+					    <li>List item one</li>
+					    <li>List item two</li>
+					    <li>List item three</li>
+					  </ul>
+					</div>
+				</div>
+			</div><!-- close #accordion-data -->
  
-		</div>
+		</div><!-- close .container -->
+		
+		<script type="text/javascript">
+			$().ready(function(){
+				var accordDataLength = $("#accordion-data").children().length;
+				$("#accordion-data").children().each(function(k,v){
+					$(this).css("display","none");
+				});
+				
+				$( "#accordion-data > div" ).accordion();
+				
+				$("#nav > span a").on("click",function(){
+					var clickedNavId = $(this).data("id");
+					$("#nav > span").hide();
+					$("#"+clickedNavId).show();
+					$("#accordion-data > div:first-child").css("display","block");
+				});
+				
+				$("#accordion-nav > div a").on("click",function(){
+					var clickedId = $(this).data("id");
+					$("#accordion-data > div").hide();
+					$("#"+clickedId).show();
+				});
+			});
+		</script>
 	
 	</body>
 </html>
